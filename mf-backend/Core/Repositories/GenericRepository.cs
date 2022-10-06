@@ -1,4 +1,5 @@
 ﻿using mf_backend.Core.IRepositories;
+using mf_backend.Models;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
@@ -6,15 +7,15 @@ namespace mf_backend.Core.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        //protected InstaContext _context;
+        protected MfContext _context;
         protected readonly ILogger _logger;
         protected DbSet<T> dbSet;
 
-        public GenericRepository(ILogger logger)
+        public GenericRepository(MfContext context, ILogger logger)
         {
-            //_context = context;
-            //_logger = logger;
-            //dbSet = _context.Set<T>();
+            _context = context;
+            _logger = logger;
+            dbSet = _context.Set<T>();
         }
 
         public virtual async Task<bool> AddAsync(T entity)

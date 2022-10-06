@@ -1,16 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
 namespace mf_backend.Models
 {
-    [Table("tr_bpkb")]
-    public class MsStorageLocation
+    public partial class MsStorageLocation
     {
-        [Key]
-        [Column("location_id")]
-        public string LocationId { get; set; }
+        public MsStorageLocation()
+        {
+            TrBpkbs = new HashSet<TrBpkb>();
+        }
 
-        [Column("location_name")]
-        public string LocationName { get; set; } = null!;
+        public string LocationId { get; set; } = null!;
+        public string? LocationName { get; set; }
+
+        public virtual ICollection<TrBpkb> TrBpkbs { get; set; }
     }
 }

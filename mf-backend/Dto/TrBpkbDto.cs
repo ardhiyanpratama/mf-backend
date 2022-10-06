@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace mf_backend.Models
+﻿namespace mf_backend.Dto
 {
-    public partial class TrBpkb
+    public class TrBpkbDto
     {
         public string AgreementNumber { get; set; } = null!;
         public string? BpkbNo { get; set; }
@@ -12,9 +9,6 @@ namespace mf_backend.Models
         public string? FakturNo { get; set; }
         public DateTime? FakturDate { get; set; }
         public string? PoliceNo { get; set; }
-        public DateTime? BpkbDateIn { get; set; }
         public string? LocationId { get; set; }
-
-        public virtual MsStorageLocation? Location { get; set; }
     }
 }
