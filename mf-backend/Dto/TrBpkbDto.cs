@@ -10,5 +10,6 @@
         public DateTime? FakturDate { get; set; }
         public string? PoliceNo { get; set; }
         public string? LocationId { get; set; }
+        public DateTime? BpkbDateIn { get; set; }
     }
 }

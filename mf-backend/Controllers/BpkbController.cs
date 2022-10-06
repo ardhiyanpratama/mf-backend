@@ -37,7 +37,8 @@ namespace mf_backend.Controllers
                 BranchId = trBpkbDto.BranchId,
                 FakturDate = trBpkbDto.FakturDate,
                 FakturNo = trBpkbDto.FakturNo,
-                PoliceNo = trBpkbDto.PoliceNo
+                PoliceNo = trBpkbDto.PoliceNo,
+                BpkbDateIn = trBpkbDto.BpkbDateIn
             };
 
             var isSuccess = await _unitOfWork.Bpkb.AddAsync(newPosting);
